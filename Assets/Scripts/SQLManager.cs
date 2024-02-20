@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class SQLManager : MonoBehaviour
 {
     public Text debugText;
+    public Text inputField;
     [HideInInspector] public SQLManager Instance;
+    
     private readonly string path = $"URI=file:{Application.streamingAssetsPath}/Database/Pecados.db";
     private IDbConnection connection;
     private IDbCommand command;
@@ -32,7 +34,7 @@ public class SQLManager : MonoBehaviour
     }
 
     // Hacer una consulta
-    public void Query(string query = "SELECT * FROM pecados")
+    public void Query(string query = "SELECT * FROM Pecados")
     {
         // Create the command
         command = connection.CreateCommand();
@@ -43,6 +45,7 @@ public class SQLManager : MonoBehaviour
         reader = command.ExecuteReader();
 
         // Read the contents
+        debugText.text = string.Empty;
         while (reader.Read())
         {
             for (int i = 0; i < reader.FieldCount; i++)
@@ -51,5 +54,12 @@ public class SQLManager : MonoBehaviour
                 debugText.text += result + ", ";
             }
         }
+    }
+
+    // Input field
+    public void SearchInput()
+    {
+        if (inputField.text == string.Empty) return;
+        Query($"SELECT * FROM Pecados P WHERE P.Pecado_ID = {inputField.text}");
     }
 }
