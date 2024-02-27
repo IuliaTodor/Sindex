@@ -8,7 +8,7 @@ public class Map : MonoBehaviour
 {
     void Start()
     {
-        ColorChange("Lujuria");
+        ColorChange("Lujuria"); //prueba, hay que remplazarlo
     }
     void ColorChange(string region)
     {
