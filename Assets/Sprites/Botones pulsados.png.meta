@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Botones pulsados_0
+      name: Square_Pressed
       rect:
         serializedVersion: 2
         x: 12
@@ -118,10 +118,18 @@ TextureImporter:
         width: 130
         height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 65, y: -1.5}
+        - {x: 65, y: -8.5}
+        - {x: 4, y: -75.5}
+        - {x: -4, y: -75.5}
+        - {x: -65, y: -4.5}
+        - {x: -65, y: 1.5}
+        - {x: 0, y: 75.5}
+        - {x: 2, y: 75.5}
       tessellationDetail: 0
       bones: []
       spriteID: 10c19b31ff4e08f49b6fd1bd2d90563f
@@ -131,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Botones pulsados_1
+      name: Wide_Pressed
       rect:
         serializedVersion: 2
         x: 162
@@ -139,7 +147,7 @@ TextureImporter:
         width: 116
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Botones pulsados_2
+      name: Circle_Pressed
       rect:
         serializedVersion: 2
         x: 179
@@ -160,7 +168,7 @@ TextureImporter:
         width: 78
         height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Botones pulsados_3
+      name: WideAlt_Pressed
       rect:
         serializedVersion: 2
         x: 161
@@ -181,7 +189,7 @@ TextureImporter:
         width: 116
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,10 +212,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Botones pulsados_0: 226156677
-      Botones pulsados_1: 1366480334
-      Botones pulsados_2: -1810878146
-      Botones pulsados_3: 954875997
+      Circle_Pressed: -1810878146
+      Square_Pressed: 226156677
+      WideAlt_Pressed: 954875997
+      Wide_Pressed: 1366480334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
