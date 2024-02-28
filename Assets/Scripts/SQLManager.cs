@@ -1,18 +1,19 @@
 using System.Data;
 using Mono.Data.SqliteClient;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SQLManager : MonoBehaviour
 {
-    public Text debugText;
-    public Text inputField;
     [HideInInspector] public SQLManager Instance;
     
     private readonly string path = $"URI=file:{Application.streamingAssetsPath}/Database/Pecados.db";
     private IDbConnection connection;
     private IDbCommand command;
     private IDataReader reader;
+    private Text outputText;
+    private Toggle useIDToggle;
 
     void Start()
     {
@@ -20,6 +21,10 @@ public class SQLManager : MonoBehaviour
         if (!Instance) { Instance = this; }
         else { Destroy(gameObject); return; }
         DontDestroyOnLoad(gameObject);
+
+        // Try get new references on scene changes
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        TryGetNewReferences();
 
         // Default setup
         connection = new SqliteConnection(path);
@@ -31,6 +36,13 @@ public class SQLManager : MonoBehaviour
             " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
             " JOIN Areas A ON P.Area = A.Area_ID;"
         );
+    }
+
+    private void TryGetNewReferences()
+    {
+        outputText = GameObject.Find("Output Text")?.GetComponent<Text>();
+        useIDToggle = GameObject.Find("ID Toggle")?.GetComponent<Toggle>();
+        Debug.LogWarning($"{outputText.name}, {useIDToggle.name}");
     }
 
     // Hacer una consulta
@@ -45,21 +57,28 @@ public class SQLManager : MonoBehaviour
         reader = command.ExecuteReader();
 
         // Read the contents
-        debugText.text = string.Empty;
+        outputText.text = string.Empty;
         while (reader.Read())
         {
             for (int i = 0; i < reader.FieldCount; i++)
             {
                 var result = reader.GetString(i);
-                debugText.text += result + ", ";
+                outputText.text += result + ", ";
             }
         }
     }
 
     // Input field
-    public void SearchInput()
+    public void SearchInput(Text input = default)
     {
-        if (inputField.text == string.Empty) return;
-        Query($"SELECT * FROM Pecados P WHERE P.Pecado_ID = {inputField.text}");
+        Debug.Log(useIDToggle.isOn);
+        if (input.text.Trim() == string.Empty) return;
+        Query($"SELECT * FROM Pecados P WHERE (P.Pecado_ID = '{input.text}' AND {useIDToggle.isOn} IS TRUE) OR P.Nombre LIKE  '%{input.text}%' OR (P.Area = '{input.text}' AND {useIDToggle.isOn} IS FALSE)");
+    }
+
+    // Gets new references once you change scenes
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        TryGetNewReferences();
     }
 }
