@@ -5,16 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void LoadGame()
+    public void LoadScene(string scene) 
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(scene);
     }
-
-    public void LoadSettings()
-    {
-        SceneManager.LoadScene("Settings");
-    }
-
     public void QuitGame()
     {
         Application.Quit();
