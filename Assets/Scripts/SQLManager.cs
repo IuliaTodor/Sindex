@@ -1,4 +1,3 @@
-using System;
 using System.Data;
 using Mono.Data.SqliteClient;
 using UnityEngine;
@@ -74,7 +73,7 @@ public class SQLManager : MonoBehaviour
     {
         Debug.Log(useIDToggle.isOn);
         if (input.text.Trim() == string.Empty) return;
-        Query($"SELECT * FROM Pecados P WHERE (P.Pecado_ID = '{input.text}' AND {useIDToggle.isOn} IS TRUE) OR P.Nombre = '{input.text}' OR (P.Area = '{input.text}' AND {useIDToggle.isOn} IS FALSE)");
+        Query($"SELECT * FROM Pecados P WHERE (P.Pecado_ID = '{input.text}' AND {useIDToggle.isOn} IS TRUE) OR P.Nombre LIKE  '%{input.text}%' OR (P.Area = '{input.text}' AND {useIDToggle.isOn} IS FALSE)");
     }
 
     // Gets new references once you change scenes
