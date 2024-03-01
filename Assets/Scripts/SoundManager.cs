@@ -67,17 +67,4 @@ public class SoundManager : MonoBehaviour
         }
         sound.source.Stop();
     }
-    public void MainMusic(bool playing)
-    {
-        if (playing = true) 
-        {
-            Play("music");
-            Debug.Log("Play");
-        } 
-        else 
-        {
-            Stop("music");
-            Debug.Log("Stop");
-        }
-    }
 }
