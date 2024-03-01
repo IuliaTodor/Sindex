@@ -33,8 +33,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Retopo_Cube.002|Retopo_Cube.002Action
-      takeName: Retopo_Cube.002|Retopo_Cube.002Action
+      name: Armature|Retopo_Cube.002Action (1)
+      takeName: Armature|Retopo_Cube.002Action
       internalID: 6679787556728371497
       firstFrame: 0
       lastFrame: 80
