@@ -25,7 +25,7 @@ public class SQLManager : MonoBehaviour
         // Only one SQLManager
         if (!Instance) { Instance = this; }
         else { Destroy(gameObject); return; }
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
         // Try get new references on scene changes
         SceneManager.sceneLoaded += OnSceneLoaded;
