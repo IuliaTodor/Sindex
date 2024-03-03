@@ -1,24 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using Mono.Data.SqliteClient;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SQLManager : MonoBehaviour
 {
     [HideInInspector] public static SQLManager Instance;
     [HideInInspector] public int sinSelectedFromMenu;
-    
-    private string streamingPath = $"URI=file:{Application.streamingAssetsPath}/Database/Pecados.db";
-    private string persistentPath;
+    public Text outputText;
+
     private IDbConnection connection;
     private IDbCommand command;
     private IDataReader reader;
-    private Text outputText;
 
     void Awake()
     {
@@ -26,26 +22,10 @@ public class SQLManager : MonoBehaviour
         if (!Instance) { Instance = this; }
         else { Destroy(gameObject); return; }
         DontDestroyOnLoad(gameObject);
-
-        // Try get new references on scene changes
-        SceneManager.sceneLoaded += OnSceneLoaded;
         sinSelectedFromMenu = 1;
-        //TryGetNewReferences();
 
         StartCoroutine(RunDbCode());
-
-        // Query(
-        //     "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
-        //     " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
-        //     " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
-        //     " JOIN Areas A ON P.Area = A.Area_ID;"
-        // );
     }
-
-    //private void TryGetNewReferences()
-    //{
-    //    outputText = GameObject.Find("Output Text").GetComponent<Text>();
-    //}
 
     // Hacer una consulta
     public List<string> Query(string query = "SELECT * FROM Pecados")
@@ -80,12 +60,6 @@ public class SQLManager : MonoBehaviour
     {
         if (input.Trim() == string.Empty) return null; 
         return Query($"SELECT * FROM Pecados P WHERE (P.Pecado_ID = '{input}' AND {useID} IS TRUE) OR P.Nombre LIKE  '%{input}%' OR (P.Area = '{input}' AND {useID} IS FALSE)");
-    }
-
-    // Gets new references once you change scenes
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //TryGetNewReferences();
     }
 
     public IEnumerator RunDbCode()
@@ -130,11 +104,11 @@ public class SQLManager : MonoBehaviour
         connection.Open();
 
         // Default command
-        Query(
-            "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
-            " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
-            " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
-            " JOIN Areas A ON P.Area = A.Area_ID;"
-        );
+        // Query(
+        //     "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
+        //     " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
+        //     " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
+        //     " JOIN Areas A ON P.Area = A.Area_ID;"
+        // );
     }
 }
