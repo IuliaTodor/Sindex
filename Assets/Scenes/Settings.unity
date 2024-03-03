@@ -526,7 +526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.57125014, y: 0.5}
   m_AnchorMax: {x: 0.57125014, y: 0.5}
-  m_AnchoredPosition: {x: -390, y: -357}
+  m_AnchoredPosition: {x: -418, y: -357}
   m_SizeDelta: {x: 394.8468, y: 75.6576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576943941
@@ -562,7 +562,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: MUSIC
+  m_Text: MUSICA
 --- !u!222 &576943942
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: SOUND
+  m_Text: SONIDO
 --- !u!222 &875045845
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.57125014, y: 0.5}
   m_AnchorMax: {x: 0.57125014, y: 0.5}
-  m_AnchoredPosition: {x: -670, y: 12}
+  m_AnchoredPosition: {x: -703, y: 12}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194309738
@@ -883,7 +883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: VOLUME
+  m_Text: VOLUMEN
 --- !u!222 &1194309739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1520,16 +1520,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7eac08893642cfa44b54bccd622dc603, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1902116308}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1799655641
@@ -1765,6 +1765,7 @@ GameObject:
   - component: {fileID: 1902116306}
   - component: {fileID: 1902116305}
   - component: {fileID: 1902116304}
+  - component: {fileID: 1902116308}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1850,8 +1851,8 @@ RectTransform:
   - {fileID: 291757002}
   - {fileID: 576943940}
   - {fileID: 1981084713}
-  - {fileID: 1009682383}
   - {fileID: 1870693684}
+  - {fileID: 1009682383}
   - {fileID: 875045843}
   - {fileID: 1969170589}
   - {fileID: 1799655639}
@@ -1862,6 +1863,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1902116308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902116303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eac08893642cfa44b54bccd622dc603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1969170588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,7 +1945,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: CONFIGURATION
+  m_Text: CONFIGURACION
 --- !u!222 &1969170591
 CanvasRenderer:
   m_ObjectHideFlags: 0
