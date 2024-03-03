@@ -8,5 +8,5 @@ public class ButtonSearch : MonoBehaviour
     public void Start() { toggle = transform.Find("ID Toggle").GetComponent<Toggle>(); }
 
     // ADD THIS TO A CANVAS
-    public void Search(Text component) { SQLManager.Instance.SearchInput(component.text, toggle.isOn); }
+    public void Search(Text component) { SQLManager.Instance.SearchInput(component.text, true); }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -12,7 +13,8 @@ public class SQLManager : MonoBehaviour
     [HideInInspector] public static SQLManager Instance;
     [HideInInspector] public int sinSelectedFromMenu;
     
-    private string path = $"URI=file:{Application.streamingAssetsPath}/Database/Pecados.db";
+    private string streamingPath = $"URI=file:{Application.streamingAssetsPath}/Database/Pecados.db";
+    private string persistentPath;
     private IDbConnection connection;
     private IDbCommand command;
     private IDataReader reader;
@@ -30,35 +32,14 @@ public class SQLManager : MonoBehaviour
         sinSelectedFromMenu = 1;
         TryGetNewReferences();
 
-        try
-        {
-            // Default setup
-            connection = new SqliteConnection(path);
-            connection.Open();
-            
-        } catch (Exception e)
-        {
-            outputText.text = e.Message;
-            try
-            {
-                // Default setup
-                path = $"URI=file:{Application.persistentDataPath}/Database/Pecados.db";
+        StartCoroutine(RunDbCode());
 
-                Directory.CreateDirectory($"{Application.persistentDataPath}/Database");
-                File.Copy($"URI=file:{Application.streamingAssetsPath}/Database/Pecados.db", path);
-
-                connection = new SqliteConnection($"URI=file:{Application.persistentDataPath}/Database/Pecados.db".Replace("/", "\\"));
-                connection.Open();
-
-            } catch (Exception e2) { outputText.text = e2.Message; }
-        }
-
-        Query(
-            "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
-            " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
-            " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
-            " JOIN Areas A ON P.Area = A.Area_ID;"
-        );
+        // Query(
+        //     "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
+        //     " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
+        //     " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
+        //     " JOIN Areas A ON P.Area = A.Area_ID;"
+        // );
     }
 
     private void TryGetNewReferences()
@@ -79,14 +60,14 @@ public class SQLManager : MonoBehaviour
 
         // Read the contents
         List<string> data = new();
-        outputText.text = string.Empty;
+        if (outputText) outputText.text = string.Empty;
 
         while (reader.Read())
         {
             for (int i = 0; i < reader.FieldCount; i++)
             {
                 var result = reader.GetString(i);
-                outputText.text += result + ", ";
+                if (outputText) outputText.text += result + ", ";
                 data.Add(result);
             }
         }
@@ -105,5 +86,55 @@ public class SQLManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         TryGetNewReferences();
+    }
+
+    public IEnumerator RunDbCode()
+    {
+        // Where to copy the db to
+        string dbDestination = Path.Combine(Application.persistentDataPath, "Pecados.db");
+
+        //Check if the File do not exist then copy it
+        if (!File.Exists(dbDestination))
+        {
+            // Where the db file is at
+            string dbStreamingAsset = Path.Combine(Application.streamingAssetsPath, "Pecados.db");
+
+            byte[] result;
+
+            // Read the File from streamingAssets. Use WWW for Android
+            if (dbStreamingAsset.Contains("://") || dbStreamingAsset.Contains(":///"))
+            {
+                WWW www = new WWW(dbStreamingAsset); // No voy a cambiarlo a unitywebapi.
+                yield return www;
+                result = www.bytes;
+            }
+            else
+            {
+                result = File.ReadAllBytes(dbStreamingAsset);
+            }
+
+            // Create Directory if it does not exist
+            if (!Directory.Exists(Path.GetDirectoryName(dbDestination)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(dbDestination));
+            }
+
+            // Copy the data to the persistentDataPath where the database API can freely access the file
+            File.WriteAllBytes(dbDestination, result);
+        }
+
+        // Open DB connection
+        dbDestination = "URI=file:" + dbDestination;
+
+        connection = new SqliteConnection(dbDestination);
+        connection.Open();
+
+        // Default command
+        Query(
+            "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
+            " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
+            " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
+            " JOIN Areas A ON P.Area = A.Area_ID;"
+        );
     }
 }
