@@ -20,17 +20,17 @@ public class SQLManager : MonoBehaviour
     private IDataReader reader;
     private Text outputText;
 
-    void Start()
+    void Awake()
     {
         // Only one SQLManager
         if (!Instance) { Instance = this; }
         else { Destroy(gameObject); return; }
-        // DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         // Try get new references on scene changes
         SceneManager.sceneLoaded += OnSceneLoaded;
         sinSelectedFromMenu = 1;
-        TryGetNewReferences();
+        //TryGetNewReferences();
 
         StartCoroutine(RunDbCode());
 
@@ -42,10 +42,10 @@ public class SQLManager : MonoBehaviour
         // );
     }
 
-    private void TryGetNewReferences()
-    {
-        outputText = GameObject.Find("Output Text").GetComponent<Text>();
-    }
+    //private void TryGetNewReferences()
+    //{
+    //    outputText = GameObject.Find("Output Text").GetComponent<Text>();
+    //}
 
     // Hacer una consulta
     public List<string> Query(string query = "SELECT * FROM Pecados")
@@ -85,7 +85,7 @@ public class SQLManager : MonoBehaviour
     // Gets new references once you change scenes
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        TryGetNewReferences();
+        //TryGetNewReferences();
     }
 
     public IEnumerator RunDbCode()
