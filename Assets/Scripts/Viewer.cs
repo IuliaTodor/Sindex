@@ -17,6 +17,7 @@ public class Viewer : MonoBehaviour
         sinName.GetComponent<Text>().text = sinData[1];
         sinSin.GetComponent<Text>().text = sinData[2];
         sinDescription.GetComponent<Text>().text = sinData[3];
+        Debug.Log(sinDescription.GetComponent<Text>().text = sinData[3]);
         element1.GetComponent<Text>().text = sinData[4];
         element2.GetComponent<Text>().text = sinData[5];
     }
