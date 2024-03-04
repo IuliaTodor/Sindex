@@ -1,23 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class RotateModel : MonoBehaviour
 {
-    //Los input action que necesitamos. Pressed es para el ratón/touch y Axis para saber el eje del ratón/touch
+    //Los input action que necesitamos. Pressed es para el ratï¿½n/touch y Axis para saber el eje del ratï¿½n/touch
     [SerializeField] private InputAction pressed, axis;
 
     private Transform cam;
 
     [SerializeField] private float speed = 0.5f;
     /// <summary>
-    /// Controla si debe invertir la rotación o no
+    /// Controla si debe invertir la rotaciï¿½n o no
     /// </summary>
     [SerializeField] private bool inverted;
     private bool canRotate;
 
     private Vector2 rotation;
+    private Action<InputAction.CallbackContext> performHandler;
+    private Action<InputAction.CallbackContext> cancelHandler;
 
     private void Awake()
     {
@@ -25,17 +29,29 @@ public class RotateModel : MonoBehaviour
         pressed.Enable();
         axis.Enable();
 
-        //Cuando pressed es activado llama a la corutina. No le pasamos ninguna variable
-        pressed.performed += _ => { StartCoroutine(Rotate()); };
+        void performed(InputAction.CallbackContext _) { StartCoroutine(Rotate()); }
+        performHandler = performed;
+
+        void canceled(InputAction.CallbackContext _) { canRotate = false; }
+        cancelHandler = canceled;
+
+        //Cuando pressed es activado llama a la corutina. No le pasamos ninguna variable 
+        pressed.performed += performHandler;
         //El objeto ya no rota cuando soltamos pressed
-        pressed.canceled += _ => { canRotate = false; };
+        pressed.canceled += cancelHandler;
         //pressed.canceled += _ => { transform.rotation = Quaternion.identity; };
-        //Le pasamos un Vector2 a la rotación, que equivaldrá a la posición del ratón/touch
+        //Le pasamos un Vector2 a la rotaciï¿½n, que equivaldrï¿½ a la posiciï¿½n del ratï¿½n/touch
         axis.performed += touchVector => { rotation = touchVector.ReadValue<Vector2>(); };
     }
 
+    private void OnDisable()
+    {
+        pressed.performed -= performHandler;
+        pressed.canceled -= cancelHandler;
+    }
+
     /// <summary>
-    /// Activa la rotación del objeto
+    /// Activa la rotaciï¿½n del objeto
     /// </summary>
     /// <returns></returns>
     private IEnumerator Rotate()
