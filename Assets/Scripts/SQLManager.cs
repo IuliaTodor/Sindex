@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,7 @@ public class SQLManager : MonoBehaviour
     private IDbConnection connection;
     private IDbCommand command;
     private IDataReader reader;
+    private string dbDestination;
 
     void Awake()
     {
@@ -24,6 +26,7 @@ public class SQLManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         sinSelectedFromMenu = 1;
 
+        outputText = GameObject.Find("Output Text").GetComponent<Text>();
         StartCoroutine(RunDbCode());
     }
 
@@ -58,14 +61,15 @@ public class SQLManager : MonoBehaviour
     // Input field
     public List<string> SearchInput(string input, bool useID = true)
     {
+        Debug.LogWarning($"{input}, {useID.ToString().ToUpper()}");
         if (input.Trim() == string.Empty) return null; 
-        return Query($"SELECT * FROM Pecados P WHERE (P.Pecado_ID = '{input}' AND {useID} IS TRUE) OR P.Nombre LIKE  '%{input}%' OR (P.Area = '{input}' AND {useID} IS FALSE)");
+        return Query($"SELECT * FROM Pecados P WHERE (P.Pecado_ID = '{input}' AND '{useID.ToString().ToUpper()}' = 'TRUE') OR P.Nombre LIKE '%{input}%' OR (P.Area = '{input}' AND '{useID.ToString().ToUpper()}' != 'TRUE')");
     }
 
     public IEnumerator RunDbCode()
     {
         // Where to copy the db to
-        string dbDestination = Path.Combine(Application.persistentDataPath, "Pecados.db");
+        dbDestination = Path.Combine(Application.persistentDataPath, "Pecados.db");
 
         //Check if the File do not exist then copy it
         if (!File.Exists(dbDestination))
@@ -104,11 +108,11 @@ public class SQLManager : MonoBehaviour
         connection.Open();
 
         // Default command
-        // Query(
-        //     "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
-        //     " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
-        //     " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
-        //     " JOIN Areas A ON P.Area = A.Area_ID;"
-        // );
+        Query(
+            "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
+            " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
+            " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
+            " JOIN Areas A ON P.Area = A.Area_ID;"
+        );
     }
 }
