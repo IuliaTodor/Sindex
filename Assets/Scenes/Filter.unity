@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -780,7 +780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -105.00003, y: -11}
+  m_AnchoredPosition: {x: -105.000015, y: -11}
   m_SizeDelta: {x: 583.4, y: 136.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140534301
@@ -1461,6 +1461,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6a43f9a3679ef48b996690ce8aafaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressed:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 24d34860-3159-4d44-9bd7-ee6ba82b31e8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!81 &444262445
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1726,11 +1735,11 @@ GameObject:
   m_Component:
   - component: {fileID: 537115832}
   - component: {fileID: 537115833}
-  - component: {fileID: 537115834}
   - component: {fileID: 537115835}
+  - component: {fileID: 537115836}
   m_Layer: 5
   m_Name: 3DModelContainer
-  m_TagString: Untagged
+  m_TagString: 3DModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1772,18 +1781,6 @@ MonoBehaviour:
   sinDescription: {fileID: 1534958309}
   element1: {fileID: 200255142}
   element2: {fileID: 1506402208}
---- !u!114 &537115834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537115831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6a43f9a3679ef48b996690ce8aafaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &537115835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1805,6 +1802,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.287377, y: 6.4964137, z: 1}
   m_Center: {x: -0.1852727, y: 1.3277853, z: 0}
+--- !u!114 &537115836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537115831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6a43f9a3679ef48b996690ce8aafaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressed:
+    m_Name: Pressed
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 411fceae-9845-472c-bbef-0c04884feb6c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 357ee6c3-a614-44e8-9b80-c3f6459d831c
+      m_Path: <Touchscreen>/Press
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pressed
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 48ceb608-dbdb-4993-86de-1e0ceb2bc50f
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pressed
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &583485511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4829,6 +4863,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1705180593}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1705180595}
   m_SourcePrefab: {fileID: 100100000, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
 --- !u!4 &1705180590 stripped
 Transform:
@@ -4904,6 +4941,27 @@ MonoBehaviour:
     m_Flags: 0
   speed: 0.5
   inverted: 0
+--- !u!65 &1705180595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705180591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0003276, y: 5.931038, z: 6.492968}
+  m_Center: {x: -0.0001531643, y: 1.2709213, z: -0.904348}
 --- !u!1 &1724777842
 GameObject:
   m_ObjectHideFlags: 0
