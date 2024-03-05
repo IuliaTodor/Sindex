@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour
@@ -11,17 +10,14 @@ public class SoundManager : MonoBehaviour
     {
         public string name;
         public AudioClip clip;
-        [Range(0f, 1f)]
-        public float volume = 1f;
-        [Range(0.1f, 3f)]
-        public float pitch = 1f;
+        [Range(0f, 1f)] public float volume = 1f;
+        [Range(0.1f, 3f)] public float pitch = 1f;
+        [HideInInspector] public AudioSource source;
         public bool loop = false;
 
-        [HideInInspector]
-        public AudioSource source;
     }
 
-    public List<Sound> sounds = new List<Sound>();
+    public List<Sound> sounds = new();
 
     void Awake()
     {
