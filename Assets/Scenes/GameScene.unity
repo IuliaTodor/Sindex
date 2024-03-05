@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4414782}
   - component: {fileID: 4414784}
   m_Layer: 5
-  m_Name: AvariciaTemplate
+  m_Name: Avaricia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 137257825}
   - component: {fileID: 137257824}
   m_Layer: 5
-  m_Name: LujuriaDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 164035543}
   - component: {fileID: 164035542}
   m_Layer: 5
-  m_Name: GulaDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,6 +805,7 @@ GameObject:
   - component: {fileID: 226354321}
   - component: {fileID: 226354323}
   - component: {fileID: 226354322}
+  - component: {fileID: 226354324}
   m_Layer: 5
   m_Name: HeptagonDistribution
   m_TagString: Untagged
@@ -873,6 +874,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226354320}
   m_CullTransparentMesh: 1
+--- !u!114 &226354324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226354320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70440c2c3bb32f449a3ec9994f7bd62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &295175133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,7 +1121,7 @@ GameObject:
   - component: {fileID: 435647949}
   - component: {fileID: 435647951}
   m_Layer: 5
-  m_Name: EnvidiaTemplate
+  m_Name: Envidia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1492,7 +1505,7 @@ GameObject:
   - component: {fileID: 496747404}
   - component: {fileID: 496747406}
   m_Layer: 5
-  m_Name: PerezaTemplate
+  m_Name: Pereza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1727,7 +1740,7 @@ GameObject:
   - component: {fileID: 578681510}
   - component: {fileID: 578681509}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: PerezaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,7 +1891,7 @@ GameObject:
   - component: {fileID: 611394690}
   - component: {fileID: 611394689}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: LujuriaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2124,7 +2137,7 @@ GameObject:
   - component: {fileID: 655286146}
   - component: {fileID: 655286148}
   m_Layer: 5
-  m_Name: IraTemplate
+  m_Name: Ira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,7 +2363,7 @@ GameObject:
   - component: {fileID: 671707577}
   - component: {fileID: 671707579}
   m_Layer: 5
-  m_Name: 'LujuriaTemplate '
+  m_Name: Lujuria
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2575,7 +2588,7 @@ GameObject:
   - component: {fileID: 708292984}
   - component: {fileID: 708292983}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: EnvidiaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2613,7 +2626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2685,7 +2698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2727,7 +2740,7 @@ GameObject:
   - component: {fileID: 747297718}
   - component: {fileID: 747297720}
   m_Layer: 5
-  m_Name: EnvidiaDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2766,7 +2779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18184197, g: 0.1981132, b: 0.17506228, a: 1}
+  m_Color: {r: 0.18039216, g: 0.2, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3673,7 +3686,7 @@ GameObject:
   - component: {fileID: 1109326545}
   - component: {fileID: 1109326547}
   m_Layer: 5
-  m_Name: SoberbiaTemplate
+  m_Name: Soberbia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3911,7 +3924,7 @@ GameObject:
   - component: {fileID: 1166327685}
   - component: {fileID: 1166327684}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: AvariciaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4450,7 +4463,7 @@ GameObject:
   - component: {fileID: 1433430297}
   - component: {fileID: 1433430296}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: IraImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4745,7 +4758,7 @@ GameObject:
   - component: {fileID: 1480914153}
   - component: {fileID: 1480914152}
   m_Layer: 5
-  m_Name: AvariciaDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5004,7 +5017,7 @@ GameObject:
   - component: {fileID: 1506056649}
   - component: {fileID: 1506056651}
   m_Layer: 5
-  m_Name: GulaTemplate
+  m_Name: Gula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5315,7 +5328,7 @@ GameObject:
   - component: {fileID: 1550248286}
   - component: {fileID: 1550248285}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: GulaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5388,7 +5401,7 @@ GameObject:
   - component: {fileID: 1553244737}
   - component: {fileID: 1553244736}
   m_Layer: 5
-  m_Name: SoberbiaDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5804,7 +5817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5824,7 +5837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Search
 --- !u!222 &1653536158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6179,7 +6192,7 @@ GameObject:
   - component: {fileID: 1781828673}
   - component: {fileID: 1781828672}
   m_Layer: 5
-  m_Name: PerezaDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6268,7 +6281,7 @@ GameObject:
   - component: {fileID: 1790265646}
   - component: {fileID: 1790265645}
   m_Layer: 5
-  m_Name: IraDataContainer
+  m_Name: DataContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6743,7 +6756,7 @@ GameObject:
   - component: {fileID: 1918221362}
   - component: {fileID: 1918221361}
   m_Layer: 5
-  m_Name: SinImage
+  m_Name: SoberbiaImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
