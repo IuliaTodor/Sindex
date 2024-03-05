@@ -35,6 +35,7 @@ public class ToggleAnimation : MonoBehaviour
     private IEnumerator PlayAnimation()
     {
         RaycastHit hit;
+
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.Log("Mouse");
         //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 2f);
