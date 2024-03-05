@@ -62,27 +62,29 @@ public class RotateModel : MonoBehaviour
         {
             rotation *= speed;
 
-            // Rota en el eje Y
-            if (inverted)
-            {
-                transform.Rotate(Vector3.up, rotation.x, Space.World);
-            }
-            else
-            {
-                transform.Rotate(Vector3.up, -rotation.x, Space.World);
-            }
+                // Rota en el eje Y
+                if (inverted)
+                {
+                    transform.Rotate(Vector3.up, rotation.x, Space.World);
+                }
+                else
+                {
+                    transform.Rotate(Vector3.up, -rotation.x, Space.World);
+                }
 
-            // Rota en el eje X
-            if (inverted)
-            {
-                transform.Rotate(cam.right, -rotation.y, Space.World);
-            }
-            else
-            {
-                transform.Rotate(cam.right, rotation.y, Space.World);
-            }
-
+                // Rota en el eje X
+                if (inverted)
+                {
+                    transform.Rotate(cam.right, -rotation.y, Space.World);
+                }
+                else
+                {
+                    transform.Rotate(cam.right, rotation.y, Space.World);
+                }
             yield return null;
         }
+
     }
+
+  
 }
