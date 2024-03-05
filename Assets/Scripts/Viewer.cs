@@ -24,5 +24,8 @@ public class Viewer : MonoBehaviour
         fortaleza.GetComponent<Text>().text = sinData[7];
         debilidad.GetComponent<Text>().text = sinData[8];
 
+        // 3D Model
+        Debug.LogWarning(sinData[2]);
+        Instantiate(Resources.Load($"Models/{sinData[2]}/{sinData[2]}_Prefab"), transform.position, Quaternion.identity, transform);
     }
 }
