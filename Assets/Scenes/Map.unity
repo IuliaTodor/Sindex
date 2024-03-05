@@ -362,7 +362,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Lujuria
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -494,7 +506,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Envidia
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -778,7 +802,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Gula
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -909,6 +945,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2214281101995012600, guid: f764c9356fed2b94b834b5618136f974, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1753666091}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: LoadScene
@@ -1122,7 +1170,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Avaricia
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1254,7 +1314,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pereza
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1877,7 +1949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -56}
+  m_AnchoredPosition: {x: 0, y: -60}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436017775
@@ -2122,7 +2194,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ira
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2635,7 +2719,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1436017775}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: ColorChange
+        m_MethodName: MapColorChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Soberbia
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436017775}
+        m_TargetAssemblyTypeName: Map, Assembly-CSharp
+        m_MethodName: AreaToDex
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
