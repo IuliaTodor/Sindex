@@ -4661,11 +4661,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4769,10 +4769,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1705180593}
+      addedObject: {fileID: 1705180595}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1705180595}
+      addedObject: {fileID: 1705180596}
   m_SourcePrefab: {fileID: 100100000, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
 --- !u!4 &1705180590 stripped
 Transform:
@@ -4784,70 +4784,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb5f205f8a4b6894ca658abffd7cc396, type: 3}
   m_PrefabInstance: {fileID: 1705180589}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1705180593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705180591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96d118027c392104d8dd61f4714d36f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed:
-    m_Name: Pressed
-    m_Type: 1
-    m_ExpectedControlType: Button
-    m_Id: 7f3f0d64-5b37-4450-a830-d6bd5a7e65ff
-    m_Processors: 
-    m_Interactions: Press
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 73c56a51-0b27-4f56-b2b2-f2200230ed58
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pressed
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 591939c3-08cf-4308-873c-34220d951617
-      m_Path: <Touchscreen>/Press
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Pressed
-      m_Flags: 0
-    m_Flags: 0
-  axis:
-    m_Name: Axis
-    m_Type: 0
-    m_ExpectedControlType: Vector2
-    m_Id: 47065c80-9647-45d0-af60-13aeb24deb13
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 90d6fa92-dcf6-4430-961f-0a7f5121ef24
-      m_Path: <Mouse>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 917ad41b-365c-4a2e-ae54-ad8aa40fcd4e
-      m_Path: <Touchscreen>/delta
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Axis
-      m_Flags: 0
-    m_Flags: 0
-  speed: 0.5
-  inverted: 0
 --- !u!65 &1705180595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4869,6 +4805,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0003276, y: 5.931038, z: 6.492968}
   m_Center: {x: -0.0001531643, y: 1.2709213, z: -0.904348}
+--- !u!114 &1705180596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705180591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad74d22fe7479fe41a5c30a63d5d546d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1724777842
 GameObject:
   m_ObjectHideFlags: 0
