@@ -11,7 +11,7 @@ public class SQLManager : MonoBehaviour
 {
     [HideInInspector] public static SQLManager Instance;
     [HideInInspector] public int sinSelectedFromMenu;
-    [HideInInspector] public string areaSelectedToMenu;
+    [HideInInspector] public List<string> areaSelectedToMenu;
     [HideInInspector] public Map currentMapDistribution;
     public Text outputText;
 
@@ -27,10 +27,9 @@ public class SQLManager : MonoBehaviour
         else { Destroy(gameObject); return; }
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += MapToDexEvent;
-        areaSelectedToMenu = null; // No area selected by default
+        areaSelectedToMenu = new(); // No area selected by default
         sinSelectedFromMenu = 1;
 
-        outputText = GameObject.Find("Output Text").GetComponent<Text>();
         StartCoroutine(RunDbCode());
     }
 
@@ -109,21 +108,13 @@ public class SQLManager : MonoBehaviour
 
         connection = new SqliteConnection(dbDestination);
         connection.Open();
-
-        // Default command
-        Query(
-            "SELECT P.Pecado_ID, P.Nombre, P.Pecado, P.Descripcion, E.Nombre, E2.Nombre, P.Area, P.Fortaleza, P.Debilidad" +
-            " FROM Pecados P JOIN Elementos E ON P.Elemento1 = E.Elemento_ID" +
-            " JOIN Elementos E2 ON P.Elemento2 = E2.Elemento_ID" +
-            " JOIN Areas A ON P.Area = A.Area_ID;"
-        );
     }
 
     private void MapToDexEvent(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name != "GameScene" || areaSelectedToMenu == null) return;
+        if (scene.name != "GameScene") return;
         currentMapDistribution = GameObject.Find("HeptagonDistribution").GetComponent<Map>();
-        currentMapDistribution.ColorChange(areaSelectedToMenu);
-        areaSelectedToMenu = null;
+        if (areaSelectedToMenu.Count != 0 && areaSelectedToMenu != null) currentMapDistribution.ColorChange(areaSelectedToMenu);
+        areaSelectedToMenu = new();
     }
 }

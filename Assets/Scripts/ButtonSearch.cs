@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class ButtonSearch : MonoBehaviour
     // ADD THIS TO A CANVAS
     public void Search(Text component)
     {
-        SQLManager.Instance.SearchInput(component.text, toggle.isOn);
-        if (SQLManager.Instance.currentMapDistribution) SQLManager.Instance.currentMapDistribution.ColorChange("Lujuria");
+        List<string> searches = SQLManager.Instance.SearchInput(component.text, toggle.isOn);
+        SQLManager.Instance.currentMapDistribution.ColorChange(searches);
     }
 }
