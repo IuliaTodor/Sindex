@@ -62,7 +62,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Animation
+      name: Action
       takeName: rig|rigAction
       internalID: -1497911417332869056
       firstFrame: 130

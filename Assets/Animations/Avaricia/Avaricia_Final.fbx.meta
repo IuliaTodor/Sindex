@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83eb77effb5cfb945980bbec394e0fd7
+guid: 8285c02ccbb451d4986a276dcb4a4aca
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
-      takeName: metarig|metarigAction
-      internalID: -887982601649841707
+      name: CuerpoIdle
+      takeName: rig.001|rig.001Action
+      internalID: -6851493242495694946
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 160
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -62,11 +62,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle (1)
-      takeName: Armature|Armature|Take 001|BaseLayer
-      internalID: 5862543501114407046
+      name: SacoIdle
+      takeName: Armature|ArmatureAction
+      internalID: 4781951162920444690
       firstFrame: 0
-      lastFrame: 239
+      lastFrame: 160
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -91,11 +91,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Action
-      takeName: metarig|metarigAction
-      internalID: 8122295292245662830
-      firstFrame: 0
-      lastFrame: 240
+      name: CuerpoAccion
+      takeName: rig.001|rig.001Action
+      internalID: 340373304399054119
+      firstFrame: 200
+      lastFrame: 270
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -120,11 +120,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Action (1)
-      takeName: Armature|Armature|Take 001|BaseLayer
-      internalID: -707611336741437031
-      firstFrame: 0
-      lastFrame: 239
+      name: SacoAccion
+      takeName: Armature|ArmatureAction
+      internalID: 3696890337287820257
+      firstFrame: 200
+      lastFrame: 269
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
