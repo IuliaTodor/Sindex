@@ -45,7 +45,7 @@ public class ToggleAnimation : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("3DModel"))
             {
                 Debug.Log("Trigger");
-                hit.collider.gameObject.GetComponent<Animator>().SetTrigger("isTouched");
+                hit.collider.gameObject.GetComponent<Animator>().SetTrigger("IsTouched");
             }
         }
 
