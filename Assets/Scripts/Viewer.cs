@@ -9,6 +9,8 @@ public class Viewer : MonoBehaviour
     public GameObject sinDescription;
     public GameObject element1;
     public GameObject element2;
+    public GameObject fortaleza;
+    public GameObject debilidad;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +21,8 @@ public class Viewer : MonoBehaviour
         sinDescription.GetComponent<Text>().text = sinData[3];
         element1.GetComponent<Text>().text = sinData[4];
         element2.GetComponent<Text>().text = sinData[5];
+        fortaleza.GetComponent<Text>().text = sinData[7];
+        debilidad.GetComponent<Text>().text = sinData[8];
+
     }
 }
