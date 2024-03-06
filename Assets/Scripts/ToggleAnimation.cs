@@ -33,18 +33,15 @@ public class ToggleAnimation : MonoBehaviour
 
     private IEnumerator PlayAnimation()
     {
-        RaycastHit hit;
-
-        Ray ray = new Ray(transform.position, transform.forward);
-        Debug.Log("Mouse");
+        Ray ray = new(transform.position, transform.forward);
         //Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 2f);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
         {
-            Debug.Log("Raycast");
             if (hit.collider.gameObject.CompareTag("3DModel"))
             {
-                Debug.Log("Trigger");
-                hit.collider.gameObject.GetComponent<Animator>().SetTrigger("IsTouched");
+                Animator anim = hit.collider.gameObject.GetComponent<Animator>();
+                if (hit.collider.name == "Lujuria_Prefab") SoundManager.instance.Play("carlos");
+                anim.SetTrigger("IsTouched");
             }
         }
 

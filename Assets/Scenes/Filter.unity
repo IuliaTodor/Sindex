@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2564,7 +2564,6 @@ GameObject:
   - component: {fileID: 788472930}
   - component: {fileID: 788472929}
   - component: {fileID: 788472933}
-  - component: {fileID: 788472935}
   - component: {fileID: 788472937}
   - component: {fileID: 788472936}
   m_Layer: 5
@@ -2669,20 +2668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eac08893642cfa44b54bccd622dc603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &788472935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788472928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f17b36cef5e2744bf704c72e80aebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oldInfoPanel: {fileID: 0}
-  newInfoPanel: {fileID: 240858}
 --- !u!114 &788472936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2696,7 +2681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5764706, g: 0.5764706, b: 0.5764706, a: 1}
+  m_Color: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4101,7 +4086,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 68f3cdc965ce6354faf0d42c66c0e0a4, type: 3}
-    m_FontSize: 64
+    m_FontSize: 62
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

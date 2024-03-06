@@ -49,11 +49,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9c7b2c92c120fbc46be546e99fff528e, type: 3}
     volume: 0.8
     pitch: 1
-    loop: 1
     source: {fileID: 0}
+    loop: 1
   - name: button
     clip: {fileID: 8300000, guid: a9011ffe174db6a41a0b5b4953aa95a9, type: 3}
     volume: 0.8
     pitch: 1
-    loop: 0
     source: {fileID: 0}
+    loop: 0
+  - name: carlos
+    clip: {fileID: 8300000, guid: 7dfc6f2054e14ef4484c87771c236d9d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
