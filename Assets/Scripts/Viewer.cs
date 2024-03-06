@@ -28,5 +28,6 @@ public class Viewer : MonoBehaviour
         GameObject model = (GameObject)Instantiate(Resources.Load($"Models/{sinData[2]}/{sinData[2]}_Prefab"), transform.position, Quaternion.identity, transform);
         if (sinData[2] != "Pereza") model.transform.rotation = Quaternion.Euler(0, 180, 0);
         else model.transform.rotation = Quaternion.Euler(0, -90, 0);
+        mapReference.MapColorChange(sinData[2]);
     }
 }
