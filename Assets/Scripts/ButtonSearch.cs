@@ -4,14 +4,17 @@ using UnityEngine.UI;
 
 public class ButtonSearch : MonoBehaviour
 {
-    private Toggle toggle;
+    private Button byID;
 
-    public void Start() { toggle = transform.Find("ID Toggle").GetComponent<Toggle>(); }
+    public void Start()
+    {
+        byID = transform.Find("Settings").Find("By ID").GetComponent<Button>();
+    }
 
     // ADD THIS TO A CANVAS
     public void Search(Text component)
     {
-        List<string> searches = SQLManager.Instance.SearchInput(component.text, toggle.isOn);
+        List<string> searches = SQLManager.Instance.SearchInput(component.text, !byID.interactable);
         SQLManager.Instance.currentMapDistribution.ColorChange(searches);
     }
 }
